@@ -10,6 +10,11 @@ behavioral archetypes:
 
 The project uses statistical, spectral (FFT), and trend-based features,
 Snorkel for weak supervision, and LightGBM for workload classification.
+## Requirements
+
+- Python 3.10+
+- Jupyter Notebook
+- Required Python packages are listed in `requirements.txt`
 
 ## 📌 Problem Statement
 
@@ -39,4 +44,7 @@ Azure Functions Invocation Trace
               ↓
       LightGBM Classifier
               ↓
+
+
+
        Workload Classification
