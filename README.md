@@ -1,17 +1,42 @@
 # Semantic Workload Awareness in Serverless Computing
 
-ML pipeline that classifies serverless function traffic into four archetypes — SPIKE, PERIODIC, RAMP, STATIONARY — using statistical, spectral (FFT), and trend features, Snorkel weak supervision, and a LightGBM classifier.
+An ML-based pipeline for classifying serverless function workloads into four
+behavioral archetypes:
 
-## Status
-Work in progress. Core pipeline (data acquisition → feature engineering → weak supervision → classification) is functional end-to-end. Labeling functions are being expanded for fuller alignment with the proposed methodology.
+- SPIKE
+- PERIODIC
+- RAMP
+- STATIONARY
 
-## Pipeline
-1. `phase1_preprocess.py` — downloads and preprocesses the Azure Functions 2019 invocation trace (14 days, 10,000 sampled functions)
-2. Feature engineering — statistical, spectral (FFT), and trend features
-3. Snorkel weak supervision — labeling functions + LabelModel
-4. LightGBM classifier with GridSearch + Stratified K-Fold
+The project uses statistical, spectral (FFT), and trend-based features,
+Snorkel for weak supervision, and LightGBM for workload classification.
 
-## Results
-See `final_confusion_matrix.png` for current evaluation results.
+## 📌 Problem Statement
 
-Raw dataset files are not included (regenerate via `phase1_preprocess.py`; source: [Azure Public Dataset](https://github.com/Azure/AzurePublicDataset)).
+Serverless workloads can exhibit different traffic patterns over time.
+Identifying these patterns can help systems better understand workload
+behavior and make informed resource management and scaling decisions.
+
+This project aims to automatically classify serverless function invocation
+traces into different workload archetypes using machine learning.
+
+## 🧠 Methodology
+
+The pipeline consists of the following stages:
+
+```text
+Azure Functions Invocation Trace
+              ↓
+       Data Preprocessing
+              ↓
+       Feature Engineering
+              ↓
+  Statistical / FFT / Trend Features
+              ↓
+       Snorkel Weak Supervision
+              ↓
+          Label Model
+              ↓
+      LightGBM Classifier
+              ↓
+       Workload Classification
