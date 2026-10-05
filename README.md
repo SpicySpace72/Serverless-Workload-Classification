@@ -16,7 +16,7 @@ Snorkel for weak supervision, and LightGBM for workload classification.
 - Jupyter Notebook
 - Required Python packages are listed in `requirements.txt`
 
-## 📌 Problem Statement
+## Problem Statement
 
 Serverless workloads can exhibit different traffic patterns over time.
 Identifying these patterns can help systems better understand workload
@@ -25,7 +25,7 @@ behavior and make informed resource management and scaling decisions.
 This project aims to automatically classify serverless function invocation
 traces into different workload archetypes using machine learning.
 
-## 🧠 Methodology
+## Methodology
 
 The pipeline consists of the following stages:
 
